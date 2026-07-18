@@ -1,3 +1,4 @@
+<!-- QUINCY SITE v3 : logo-invert-fix -->
 <!DOCTYPE html>
 <html lang="zh-Hant" class="dark">
 <head>
@@ -165,6 +166,15 @@
       box-shadow: 0 2px 6px rgba(0,0,0,0.16), inset 0 1px 0 rgba(255,255,255,0.95);
     }
 
+    /* ===== 品牌 Logo 主題反色(強制優先,確保任何情況下生效) ===== */
+    .brand-logo {
+      filter: invert(1) !important;   /* 淺色模式:白色 logo 反轉為深色 */
+      transition: filter .4s ease;
+    }
+    html.dark .brand-logo {
+      filter: invert(0) !important;   /* 深色模式:顯示原始白色 */
+    }
+
     /* 網格氛圍背景(與名片頁一致) */
     .ambient-grid {
       background-image:
@@ -282,7 +292,7 @@
   <!-- ===== NAV ===== -->
   <nav class="relative z-20 max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
     <a href="#top" class="flex items-center gap-3 group">
-      <img src="assets/qlogo.png" alt="" class="w-8 h-8 object-contain invert dark:invert-0 transition-all duration-300 group-hover:scale-105 select-none">
+      <img src="assets/qlogo.png" alt="" class="brand-logo w-8 h-8 object-contain group-hover:scale-105 transition-transform select-none">
       <span class="font-display text-sm tracking-[0.3em]">QUINCY</span>
     </a>
     <div class="flex items-center gap-6">
@@ -302,7 +312,7 @@
   <!-- ===== HERO ===== -->
   <header id="top" class="relative z-10 max-w-6xl mx-auto px-6 pt-16 pb-24 md:pt-24 md:pb-32">
     <div class="hero-seq flex flex-col items-center text-center">
-      <img src="assets/qlogo.png" alt="QUINCY Logo" class="w-56 md:w-72 object-contain invert dark:invert-0 transition-all duration-300 select-none drop-shadow-sm" draggable="false">
+      <img src="assets/qlogo.png" alt="QUINCY Logo" class="brand-logo w-56 md:w-72 object-contain select-none" draggable="false">
 
       <h1 class="mt-10 font-display text-2xl md:text-4xl tracking-[0.35em] uppercase">
         Quincy&nbsp;Chen
@@ -344,7 +354,7 @@
         <a href="#" class="work-visual block aspect-[4/3] rounded-2xl border transition-colors duration-300"
            style="border-color: var(--hairline-strong); background: var(--graphite);" aria-label="作品一（佔位）">
           <div class="w-full h-full flex items-center justify-center">
-            <img src="assets/qlogo.png" alt="QUINCY 品牌識別" class="w-1/2 max-w-[220px] object-contain invert dark:invert-0 transition-all duration-300 select-none drop-shadow-sm" draggable="false">
+            <img src="assets/qlogo.png" alt="QUINCY 品牌識別" class="brand-logo w-1/2 max-w-[220px] object-contain select-none" draggable="false">
           </div>
         </a>
         <div class="md:pr-8">
@@ -518,7 +528,7 @@
 
   <!-- ===== FOOTER ===== -->
   <footer class="relative z-10 max-w-6xl mx-auto px-6 py-10 flex flex-col items-center gap-4 border-t" style="border-color: var(--hairline);">
-    <img src="assets/qlogo.png" alt="" class="w-10 object-contain invert dark:invert-0 transition-all duration-300 opacity-70 select-none" draggable="false">
+    <img src="assets/qlogo.png" alt="" class="brand-logo w-10 object-contain opacity-70 select-none" draggable="false">
     <p class="font-mono text-[10px] tracking-[0.3em] uppercase opacity-40">
       © <span id="footer-year">2026</span> Quincy Chen 陳宏瑋 — All Rights Reserved
     </p>
